@@ -1,0 +1,29 @@
+.credit-card-details {
+    background-color: #fff;
+    border-radius: 0.625rem; 
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); 
+    padding: 1.25rem; 
+    text-align: left;
+    margin-bottom: 1.25rem; 
+    width: 100%;
+  }
+  
+  .credit-card-details__title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.625rem; 
+    color:black;
+  }
+  
+  .credit-card-details__list {
+    list-style-type: none;
+    padding: 0;
+    color: #fff;
+  }
+  
+  .credit-card-details__item {
+    margin: 0.3125rem 0;
+    font-size: 1rem;
+    color:black;
+  }
+  

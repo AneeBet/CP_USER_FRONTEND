@@ -1,0 +1,99 @@
+.credit-card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 0.625rem; 
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); 
+    padding: 1.25rem; 
+    margin-bottom: 1.25rem;
+    height:7rem;
+  }
+  
+  .credit-card {
+    position: relative;
+    width: 15.625rem; 
+    height: 9.375rem;
+    padding: 1.25rem; 
+    border-radius: 0.625rem;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); 
+  }
+  
+  .credit-card--Platinum {
+    background: linear-gradient(to right, #434343, #000000);
+    color:#fff;
+  }
+  
+  .credit-card--Gold {
+    background: linear-gradient(to right, #FFD700, #DAA520);
+    color: #333;
+  }
+  
+  .credit-card--Silver {
+    background: linear-gradient(to right, #C0C0C0, #808080);
+  }
+  
+  .credit-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .credit-card__title {
+    font-size: 1rem;
+    margin: 0;
+  }
+  
+  .credit-card__logos {
+    display: flex;
+  }
+  
+  .credit-card__logo {
+    width: 1.25rem; 
+    height: 1.25rem; 
+    border-radius: 50%;
+    margin-left: 0.3125rem; 
+    background-color: white; 
+  }
+  
+  .credit-card__logo--1 {
+    background-color: red;
+  }
+  
+  .credit-card__logo--2 {
+    background-color: yellow;
+  }
+  
+  .credit-card__info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.625rem; 
+  }
+  
+  .credit-card__holder,
+  .credit-card__expiry {
+    width: 45%;
+  }
+  
+  .credit-card__holder-title,
+  .credit-card__expiry-title {
+    margin: 0;
+    font-size: 0.7rem; 
+  }
+  
+  .credit-card__holder-name,
+  .credit-card__expiry-date {
+    margin: 0.3125rem 0 0; 
+    font-size: 0.8rem; 
+    font-weight: bold;
+  }
+  
+  .credit-card__number {
+    font-size: 0.9rem; 
+    text-align: center;
+    margin-top: 0.625rem; 
+    letter-spacing: 0.125rem; 
+  }
+  

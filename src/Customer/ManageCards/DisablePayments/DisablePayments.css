@@ -1,0 +1,86 @@
+.disable-payments-container {
+    background-color: var(--color-white);
+    color: var(--color-black);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow-lg);
+    max-width: 600px;
+    margin: var(--spacing-xl) auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  .disable-payments-container h4 {
+    font-size: var(--font-size-medium);
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+  }
+  
+  .disable-payments-select {
+    width: 100%;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-grey-medium);
+    font-size: var(--font-size-base);
+    color: var(--color-black);
+    background-color: var(--color-grey-light);
+    margin-bottom: var(--spacing-md);
+    transition: border-color 0.3s;
+  }
+  
+  .disable-payments-select:focus {
+    border-color: var(--color-primary);
+    outline: none;
+  }
+  
+  .disable-payments-card-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+  }
+  
+  .disable-payments-card {
+    background-color: var(--color-grey-light);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow-sm);
+    text-align: left;
+  }
+  
+  .disable-payments-card h5 {
+    font-size: var(--font-size-base);
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  .disable-payments-card p {
+    font-size: var(--font-size-small);
+    color: var(--color-grey-dark);
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .disable-payments-button-container {
+    text-align: center;
+  }
+  
+  .disable-payments-button {
+    padding: var(--spacing-sm) var(--spacing-md);
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .disable-payments-button:disabled {
+    background-color: var(--color-grey-medium);
+    cursor: not-allowed;
+  }
+  
+  .disable-payments-button:hover:not(:disabled) {
+    background-color: var(--color-primary-hover);
+    box-shadow: var(--box-shadow-md);
+  }
+  

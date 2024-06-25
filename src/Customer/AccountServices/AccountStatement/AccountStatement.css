@@ -1,0 +1,114 @@
+.account-statement {
+    background-color: var(--color-white);
+    color: var(--color-black);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow-lg);
+    max-width: 800px;
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+    margin-left: 20rem;
+    margin-right: auto;   
+    
+    font-family: Arial, sans-serif;
+  }
+  
+  .statement_filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .statement_filter {
+    flex: 1 1 calc(25% - var(--spacing-md)); 
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .statement_filter label {
+    font-size: var(--font-size-base);
+    color: var(--color-grey-dark);
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  .statement_filter input,
+  .statement_filter select {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-grey-medium);
+    font-size: var(--font-size-base);
+    color: var(--color-black);
+    background-color: var(--color-grey-light);
+    transition: border-color 0.3s;
+  }
+  
+  .statement_filter input:focus,
+  .statement_filter select:focus {
+    border-color: var(--color-primary);
+    outline: none;
+  }
+  
+  .statement_transactions-table22 {
+    width: 90%;
+    border-collapse: collapse;
+    margin-bottom: var(--spacing-lg);
+    
+  }
+  
+  .statement_transactions-table th,
+  .statement_transactions-table td {
+    padding: var(--spacing-xs);
+    text-align: left;
+    border-bottom: var(--border-width) solid var(--color-grey-medium);
+  }
+  
+  .statement_transactions-table th {
+    background-color: var(--color-grey-dark);
+    color: var(--color-white);
+  }
+  
+  .statement_transactions-table tr:nth-child(even) {
+    background-color: var(--color-grey-light);
+  }
+  
+  .statement_transactions-table tr:hover {
+    background-color: var(--color-hover-light);
+  }
+  
+  .statement_download-statement {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--spacing-lg);
+  }
+  
+  .statement_download-statement button {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .statement_download-statement button:hover {
+    background-color: var(--color-primary-hover);
+    box-shadow: var(--box-shadow-md);
+  }
+  
+  @media (max-width: 768px) {
+    .statement_filters {
+      flex-direction: column;
+    }
+  
+    .statement_filter {
+      flex: 1 1 100%; 
+    }
+  
+    .statement_transactions-table th,
+    .statement_transactions-table td {
+      font-size: var(--font-size-small);
+    }
+  }
+  

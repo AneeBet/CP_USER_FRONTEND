@@ -1,0 +1,68 @@
+.track-app-container {
+    background-color: var(--color-white);
+    color: var(--color-black);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow-lg);
+    max-width: 800px;
+    margin: var(--spacing-xl) auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  .track-app-form-group {
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .track-app-form-group label {
+    font-size: var(--font-size-base);
+    color: var(--color-primary);
+    display: block;
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  .track-app-form-group select {
+    width: 100%;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-grey-medium);
+    font-size: var(--font-size-base);
+    color: var(--color-black);
+    background-color: var(--color-grey-light);
+    transition: border-color 0.3s;
+  }
+  
+  .track-app-form-group select:focus {
+    border-color: var(--color-primary);
+    outline: none;
+  }
+  
+  .track-app-info {
+    margin-top: var(--spacing-lg);
+  }
+  
+  .track-app-info table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .track-app-info th,
+  .track-app-info td {
+    padding: var(--spacing-sm);
+    border: 1px solid var(--color-grey-medium);
+    text-align: left;
+    font-size: var(--font-size-base);
+  }
+  
+  .track-app-info th {
+    background-color: var(--color-grey-light);
+    color: var(--color-black);
+  }
+  
+  .track-app-info tr:nth-child(even) {
+    background-color: var(--color-grey-light);
+  }
+  
+  .track-app-info tr:hover {
+    background-color: var(--color-hover-light);
+  }
+  

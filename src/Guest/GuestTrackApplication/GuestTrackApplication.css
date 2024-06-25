@@ -1,0 +1,48 @@
+.guest-track-application-container {
+    background-color: var(--color-white);
+    color: var(--color-black);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow-lg);
+    max-width: 800px;
+    margin: var(--spacing-xl) auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  .guest-track-application-container h2 {
+    font-size: var(--font-size-large);
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+  }
+  
+  .guest-track-application-table {
+    width: 100%;
+    margin-top: var(--spacing-lg);
+  }
+  
+  .guest-track-application-table table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .guest-track-application-table th,
+  .guest-track-application-table td {
+    border: 1px solid var(--color-grey-medium);
+    padding: var(--spacing-sm);
+    text-align: left;
+  }
+  
+  .guest-track-application-table th {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+  }
+  
+  .guest-track-application-table tr:nth-child(even) {
+    background-color: var(--color-grey-light);
+  }
+  
+  .guest-track-application-table tr:hover {
+    background-color: var(--color-grey-medium);
+  }
+  

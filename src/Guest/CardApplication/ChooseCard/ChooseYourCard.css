@@ -1,0 +1,114 @@
+.additional-add2-card-container {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow-lg);
+  max-width: 800px;
+  margin: var(--spacing-xl) auto;
+  font-family: Arial, sans-serif;
+}
+
+.additional-card-container h2 {
+  font-size: var(--font-size-large);
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+}
+
+.additional-card-container p {
+  font-size: var(--font-size-base);
+  color: var(--color-grey-dark);
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+}
+
+.choose-add-cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
+.choose-add-card-option {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius);
+  background-color: var(--color-grey-light);
+  box-shadow: var(--box-shadow-md);
+  transition: transform 0.3s ease;
+}
+
+.choose-add-card-label {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.choose-add-card-option input[type="radio"] {
+  display: none;
+}
+
+.choose-add-card-option input[type="radio"]:checked + .choose-add-card-label {
+  transform: scale(1.05);
+  box-shadow: var(--box-shadow-lg);
+}
+
+.choose-add-action-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--spacing-lg);
+}
+
+.choose-add-button {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: var(--font-size-medium);
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.choose-add-button:hover {
+  background-color: var(--color-primary-hover);
+  box-shadow: var(--box-shadow-md);
+}
+
+
+.choose-add-card-option input[type="radio"] + .choose-add-card-label::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--color-black);
+  border-radius: 50%;
+  margin-right: var(--spacing-sm);
+  vertical-align: middle;
+}
+
+.choose-add-card-option input[type="radio"]:checked + .choose-add-card-label::before {
+  background-color: var(--color-black);
+}
+
+
+.credit-card2 {
+  height: 150px; 
+  width: 300px; 
+  font-size: 0.8rem; 
+}
+
+
+.card-details2 {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+}
+
+.card-details2.expanded {
+  max-height: 200px; 
+}
+

@@ -1,0 +1,62 @@
+.signup-body{
+  min-height: 100vh;
+  background-color: var(--color-grey-medium);
+}
+.guest-sign-container {
+    max-width: 400px;
+    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2rem;
+    background-color: var(--color-white);
+    box-shadow: var(--box-shadow-lg);
+    border-radius: var(--border-radius);
+    text-align: center;
+    top:50%;
+    bottom:50%;
+    transform:translate(0.5%,25%);
+  }
+  
+  .guest-sign-container h2 {
+    margin-bottom: 1.5rem;
+    color: var(--color-black);
+  }
+  
+  .guest-sign-form-input {
+    width: 80%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--color-grey-medium);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    color: var(--color-black);
+  }
+  
+  .guest-sign-form-input:focus {
+    border-color: var(--color-primary);
+    outline: none;
+  }
+  
+  .guest-sign-btn {
+    width: 80%;
+    padding: 0.75rem;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    
+  }
+  
+  .guest-sign-btn:hover {
+    background-color: var(--color-primary-hover);
+    box-shadow: var(--box-shadow-md);
+  }
+  
+  .guest-sign-error {
+    color: var(--color-error);
+    margin-bottom: 1rem;
+  }
+  

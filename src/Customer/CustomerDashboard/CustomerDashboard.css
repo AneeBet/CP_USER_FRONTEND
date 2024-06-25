@@ -1,0 +1,175 @@
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; 
+  padding: 2rem; 
+}
+ 
+.donut-chart-container{
+  margin-top: 0rem;
+}
+ 
+ 
+ 
+.dashboard-row {
+  display: flex;
+  gap: 4rem; 
+}
+ 
+.tile {
+  flex: 1;
+  background-color: var(--color-white); 
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow-md);
+  padding: 1.5rem; 
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  color: var(--color-black); 
+  height: 24rem;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  justify-content: space-evenly;
+  width:20rem;
+}
+ 
+.tile:hover {
+  transform: scale(1.05);
+  box-shadow: var(--box-shadow-lg);
+}
+ 
+#1.tile.credit-card-tile {
+  background-color: transparent; 
+}
+ 
+.credit-card-tile:hover .credit-card {
+  transform: scale(1.05);
+}
+ 
+.spending-limit-tile,
+.due-date-tile,
+.transactions-tile {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+ 
+}
+ 
+.spending-info,
+.tile-content {
+  width: 100%;
+ 
+}
+ 
+.spending-info h2,
+.due-date h2,
+.due-amount h2,
+.tile-header-transaction {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-xs);
+}
+ 
+.limit-amount,
+.renewal-info,
+.available-text,
+.due-date p,
+.due-amount p {
+  font-size: 1.25rem;
+}
+ 
+.edit-button {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  font-size: 1rem;
+}
+ 
+.edit-button:hover {
+  background-color: var(--color-primary-hover);
+  box-shadow: var(--box-shadow-md);
+}
+ 
+.donut-chart-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 6rem;
+}
+ 
+.circular-progressbar-wrapper {
+  width: 17rem; 
+  height: 17rem; 
+}
+ 
+.transactions-table-wrapper {
+  overflow: auto;
+  max-height: calc(100% - 3rem); 
+}
+ 
+.transactions-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-left: 0rem;
+}
+ 
+.transactions-table th,
+.transactions-table td {
+  padding: var(spacing-md);
+  text-align: left;
+  border-bottom: 1px solid var(--color-grey-medium);
+}
+ 
+.transactions-table th {
+  background-color: var(--color-grey-dark);
+  color: var(--color-white);
+  font-size: 1rem;
+  font-weight: bold;
+}
+ 
+.transactions-table tr:nth-child(even) {
+  background-color: var(--color-grey-light);
+}
+ 
+.transactions-table tr:hover {
+  background-color: var(--color-hover-light);
+}
+ 
+.transactions-table tr td {
+  font-size: 1rem;
+}
+ 
+.due-date-tile .tile-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+ 
+.due-date-tile .tile-content .icon {
+  font-size: 4rem; 
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-md);
+}
+ 
+.due-amount {
+  display: flex;
+  align-items: center;
+}
+ 
+.due-date-tile .tile-content h2,
+.due-date-tile .tile-content p {
+  text-align: center;
+}
+ 
+@media (min-width: 1024px) {
+  .dashboard-row {
+    flex-direction: row;
+  }
+}
+ 

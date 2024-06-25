@@ -1,0 +1,106 @@
+.upload-kyc-container {
+    background-color: var(--color-white);
+    color: var(--color-black);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow-lg);
+    max-width: 800px;
+    margin: var(--spacing-xl) auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  .upload-kyc-header {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .bold-text {
+    font-size: var(--font-size-large);
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .italic-text {
+    font-size: var(--font-size-base);
+    color: var(--color-grey-dark);
+    font-style: italic;
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .upload-kyc-section {
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .upload-kyc-boxes {
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .upload-kyc-boxes h2 {
+    font-size: var(--font-size-medium);
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .upload-kyc-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+  }
+  
+  .upload-kyc-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .upload-kyc-box label {
+    font-size: var(--font-size-base);
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  .upload-kyc-box input[type="file"] {
+    font-size: var(--font-size-base);
+    padding: var(--spacing-xs);
+    border: 1px solid var(--color-grey-medium);
+    border-radius: var(--border-radius);
+    background-color: var(--color-grey-light);
+  }
+  
+  .error-text {
+    font-size: var(--font-size-small);
+    color: var(--color-primary);
+    margin-top: var(--spacing-xs);
+  }
+  
+  .authorization {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .authorization input[type="checkbox"] {
+    margin-right: var(--spacing-sm);
+  }
+  
+  .authorization label {
+    font-size: var(--font-size-base);
+    color: var(--color-black);
+  }
+  
+  .submit-button {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: var(--font-size-medium);
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .submit-button:hover {
+    background-color: var(--color-primary-hover);
+    box-shadow: var(--box-shadow-md);
+  }
+  

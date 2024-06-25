@@ -1,0 +1,116 @@
+
+.guest-feedback-container {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow-lg);
+  max-width: 500px; 
+  margin: var(--spacing-xl) auto;
+  font-family: Arial, sans-serif;
+}
+
+.guest-feedback-container h2 {
+  font-size: var(--font-size-large);
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+}
+
+.guest-feedback-form {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+
+.guest-form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--spacing-lg);
+}
+
+.guest-form-group label {
+  font-size: var(--font-size-base);
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.guest-form-group select,
+.guest-form-group textarea {
+  font-size: var(--font-size-base);
+  padding: var(--spacing-xs);
+  border: 1px solid var(--color-grey-medium);
+  border-radius: var(--border-radius);
+  background-color: var(--color-grey-light);
+  width: 80%;
+}
+
+.guest-form-group textarea {
+  resize: vertical;
+}
+
+.guest-submit-button {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: var(--font-size-medium);
+  transition: background-color 0.3s, box-shadow 0.3s;
+  align-self: center;
+   width:40%
+}
+
+.guest-submit-button:hover {
+  background-color: var(--color-primary-hover);
+  box-shadow: var(--box-shadow-md);
+}
+
+.guest-feedback-error {
+  color: var(--color-error);
+  margin-bottom: var(--spacing-sm);
+  text-align: center;
+}
+
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: var(--color-white);
+  padding: var(--spacing-lg);
+  border: 1px solid var(--color-grey-medium);
+  border-radius: var(--border-radius);
+  width: 90%; 
+  max-width: 600px; 
+  text-align: center;
+}
+
+.modal-content .close {
+  color: var(--color-grey-dark);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal-content .close:hover,
+.modal-content .close:focus {
+  color: var(--color-black);
+}
+
+.modal-content p {
+  margin: var(--spacing-md) 0;
+}

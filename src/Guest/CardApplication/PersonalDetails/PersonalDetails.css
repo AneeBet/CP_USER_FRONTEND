@@ -1,0 +1,86 @@
+.personal-details {
+    background-color: var(--color-white);
+    color: var(--color-black);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow-lg);
+    max-width: 800px;
+    margin: var(--spacing-xl) auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  .personal-details h2 {
+    font-size: var(--font-size-large);
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+  }
+  
+  .form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-right: var(--spacing-md);
+  }
+  
+  .form-group:last-child {
+    margin-right: 0;
+  }
+  
+  .form-group label {
+    font-size: var(--font-size-base);
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  .form-group input {
+    font-size: var(--font-size-base);
+    padding: var(--spacing-xs);
+    border: 1px solid var(--color-grey-medium);
+    border-radius: var(--border-radius);
+    background-color: var(--color-grey-light);
+    color:var(--color-grey-dark)
+  }
+  
+  .error-text {
+    font-size: var(--font-size-small);
+    color: var(--color-primary);
+    margin-top: var(--spacing-xs);
+  }
+  
+  .form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: var(--spacing-lg);
+  }
+  
+  .form-actions button {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: var(--font-size-medium);
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .form-actions button:hover {
+    background-color: var(--color-primary-hover);
+    box-shadow: var(--box-shadow-md);
+  }
+  
+  .form-actions button[type="button"] {
+    background-color: var(--color-grey-dark);
+  }
+  
+  .form-actions button[type="button"]:hover {
+    background-color: var(--color-grey-medium);
+  }
+  

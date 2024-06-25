@@ -1,0 +1,115 @@
+.register-grievance-container {
+    background-color: var(--color-white);
+    color: var(--color-black);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow-lg);
+    max-width: 600px;
+    margin: var(--spacing-xl) auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  .grievance-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+  
+  .grievance-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+  
+  .grievance-form-group label {
+    font-size: var(--font-size-base);
+    color: var(--color-primary);
+  }
+  
+  .grievance-form-group select,
+  .grievance-form-group input,
+  .grievance-form-group textarea {
+    width: 80%;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-grey-medium);
+    font-size: var(--font-size-base);
+    color: var(--color-black);
+    background-color: var(--color-grey-light);
+    transition: border-color 0.3s;
+  }
+  
+  .grievance-form-group select:focus,
+  .grievance-form-group input:focus,
+  .grievance-form-group textarea:focus {
+    border-color: var(--color-primary);
+    outline: none;
+    
+  }
+  
+  .grievance-submit-button {
+    padding: var(--spacing-sm) var(--spacing-md);
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    align-self:center;
+    width: 50%;
+  }
+  
+  .grievance-submit-button:hover {
+    background-color: var(--color-primary-hover);
+    box-shadow: var(--box-shadow-md);
+  }
+  
+  .grievance-error-message {
+    color: var(--color-primary);
+    font-size: var(--font-size-small);
+    margin-top: var(--spacing-sm);
+  }
+  
+
+  
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: var(--color-white);
+  padding: var(--spacing-lg);
+  border: 1px solid var(--color-grey-medium);
+  border-radius: var(--border-radius);
+  width: 90%; 
+  max-width: 600px; 
+  text-align: center;
+}
+
+.modal-content .close {
+  color: var(--color-grey-dark);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal-content .close:hover,
+.modal-content .close:focus {
+  color: var(--color-black);
+}
+
+.modal-content p {
+  margin: var(--spacing-md) 0;
+}

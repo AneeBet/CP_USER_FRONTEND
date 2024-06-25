@@ -1,0 +1,125 @@
+.login_body {
+  background-color: var(--color-grey-medium);
+  min-height: 100vh;
+}
+
+.customer-login-container {
+  max-width: 400px;
+  margin: 0rem auto;
+  padding: 2rem;
+  background-color: var(--color-white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow-md);
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(0.5%, 25%);
+}
+
+.customer-login-container h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-black);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+.customer-form-group {
+  margin-bottom: 1.5rem;
+  width: 100%; 
+  display: flex;
+  justify-content: center; 
+}
+
+.customer-form-group label {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-black);
+}
+
+.customer-form-group input {
+  width: 80%; 
+  padding: 0.75rem;
+  border: 1px solid var(--color-grey-medium);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+}
+
+.customer-form-group input:focus {
+  border-color: var(--color-primary);
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-primary-light);
+}
+
+.customer-error {
+  color: var(--color-error);
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+button[type="submit"],
+button[data-testid="forgot-password-button"],
+button[data-testid="guest-login-button"] {
+  width: 80%; 
+  padding: 0.75rem;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  margin-bottom: 1rem; 
+}
+
+button[type="submit"]:hover,
+button[data-testid="forgot-password-button"]:hover,
+button[data-testid="guest-login-button"]:hover {
+  background-color: var(--color-primary-hover);
+  box-shadow: var(--box-shadow-md);
+}
+
+button[data-testid="guest-login-button"] {
+  background-color: var(--color-secondary);
+}
+
+button[data-testid="guest-login-button"]:hover {
+  background-color: var(--color-secondary-hover);
+}
+
+.customer-login-container p {
+  margin-top: 1rem;
+  color: var(--color-black);
+  font-size: 0.9rem;
+}
+
+.customer-login-container p button {
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  cursor: pointer;
+  font-size: 0.9rem;
+  text-decoration: underline;
+  padding: 0;
+  margin: 0;
+}
+
+.customer-login-container p button:hover {
+  color: var(--color-primary-hover);
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}

@@ -1,0 +1,117 @@
+.customer_navbar {
+    background-color: var(--color-grey-dark);
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    box-shadow: var(--box-shadow-md);
+    position: static;
+  }
+  
+  .burger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-right: var(--spacing-md);
+  }
+  
+  .burger-menu div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-white);
+    margin: 4px 0;
+  }
+  
+  .customer_navbar a {
+    color: var(--color-white);
+    text-decoration: none;
+    margin-right: var(--spacing-lg);
+    font-size: var(--font-size-base);
+    transition: background-color 0.3s;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius);
+  }
+  
+  .customer_navbar a:hover {
+    background-color: var(--color-primary);
+  }
+  
+  .profile-button {
+    margin-left: auto;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--color-white);
+    color: var(--color-black);
+    border: 1px solid var(--color-grey-medium);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow-lg);
+    padding: var(--spacing-sm) 0;
+    z-index: 10;
+  }
+  
+  .dropdown-menu a {
+    display: block;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    color: var(--color-black);
+    text-decoration: none;
+    font-size: var(--font-size-base);
+    transition: background-color 0.3s;
+  }
+  
+  .dropdown-menu a:hover {
+    background-color: var(--color-grey-light);
+  }
+  
+  .open .burger-menu {
+    display: flex;
+  }
+  
+  .open .customer_navbar a {
+    display: none;
+  }
+  
+  .open .customer_navbar a.active {
+    display: block;
+  }
+
+  .theme-toggle-button {
+    margin-left: auto;
+    padding: 0.5rem 1rem;
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .theme-toggle-button:hover {
+    background-color: var(--color-secondary-hover);
+    box-shadow: var(--box-shadow-md);
+  }
+  
+  @media (max-width: 768px) {
+    .customer_navbar a {
+      display: none;
+    }
+  
+    .burger-menu {
+      display: flex;
+    }
+  
+    .customer_navbar.open a {
+      display: block;
+      margin: var(--spacing-sm) 0;
+    }
+  
+    .profile-button {
+      margin-left: var(--spacing-sm);
+    }
+  }
+  

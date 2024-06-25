@@ -1,0 +1,97 @@
+.customer-account-details-container {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  padding: var(--spacing-sm); 
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow-lg);
+  max-width: 700px; 
+  margin: var(--spacing-md) auto; 
+  font-family: Arial, sans-serif;
+  overflow:scroll; 
+  height: 35rem;
+}
+
+.account-selector {
+  margin-bottom: var(--spacing-sm); 
+}
+
+.account-selector label {
+  font-size: var(--font-size-sm); 
+  color: var(--color-grey-dark);
+  margin-right: var(--spacing-xs); 
+}
+
+.account-selector select {
+  padding: var(--spacing-xs) var(--spacing-xs); 
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-grey-medium);
+  font-size: var(--font-size-sm); 
+  color: var(--color-black);
+  background-color: var(--color-grey-light);
+  transition: border-color 0.3s;
+}
+
+.account-selector select:focus {
+  border-color: var(--color-primary);
+  outline: none;
+}
+
+.customeraccount-card-details {
+  margin-top: var(--spacing-sm); 
+  max-height: 1rem;
+}
+
+.customeraccount-card-details h2 {
+  font-size: var(--font-size-medium); 
+  color: var(--color-primary);
+  border-bottom: 2px solid var(--color-grey-medium);
+  padding-bottom: var(--spacing-xs); 
+  margin-bottom: var(--spacing-sm); 
+}
+
+.detail {
+  font-size: var(--font-size-sm); 
+  background-color: #f9f9f9; 
+  padding: var(--spacing-xs); 
+  margin-bottom: var(--spacing-xs); 
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow-sm);
+  transition: background-color 0.3s, box-shadow 0.3s;
+  word-wrap: break-word;
+}
+
+.detail:hover {
+  background-color: #e0e0e0; 
+  box-shadow: var(--box-shadow-md);
+}
+
+.detail strong {
+  color: var(--color-grey-dark);
+  margin-right: var(--spacing-xs); 
+}
+
+.manage-account-btn {
+  margin-top: var(--spacing-sm); 
+  padding: var(--spacing-xs) var(--spacing-xs);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.manage-account-btn:hover {
+  background-color: var(--color-primary-hover);
+  box-shadow: var(--box-shadow-md);
+}
+
+@media (max-width: 768px) {
+  .customer-account-details-container {
+    padding: var(--spacing-xs);
+  }
+
+  .account-selector label, .account-selector select, .customeraccount-card-details h2, .detail {
+    font-size: var(--font-size-xs); 
+  }
+}
