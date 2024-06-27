@@ -7,7 +7,8 @@ const GuestRegisterGrievance = () => {
   const [subject, setSubject] = useState('');
   const [description, setDescription] = useState('');
   const [error, setError] = useState(''); 
-  const [success, setSuccess] = useState(false); 
+  const [isSubmitting, setIsSubmitting] = useState(false); // State to manage button disable
+  const [isModalOpen, setIsModalOpen] = useState(false); // State to manage modal
   const { email } = useUser(); 
 
   const handleSubmit = async (e) => {
@@ -17,6 +18,8 @@ const GuestRegisterGrievance = () => {
       setError('All fields are required');
       return;
     }
+
+    setIsSubmitting(true);
 
     const grievanceData = {
       guestProfile: {
@@ -29,18 +32,22 @@ const GuestRegisterGrievance = () => {
     };
 
     try {
-    
       const response = await axios.post('http://localhost:3551/guest/grievance/add', grievanceData);
       console.log('Grievance submitted successfully:', response.data);
       setError(''); 
-      setSuccess(true); 
+      setIsModalOpen(true); // Open modal
       setSubject(''); 
       setDescription(''); 
     } catch (error) {
       console.error('Error submitting grievance:', error);
       setError('Error submitting grievance');
-      setSuccess(false); 
+    } finally {
+      setIsSubmitting(false);
     }
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
   };
 
   return (
@@ -70,12 +77,14 @@ const GuestRegisterGrievance = () => {
           ></textarea>
         </div>
         {error && <div style={{ color: 'red', marginBottom: '10px' }}>{error}</div>}
-        <button type="submit" className="guest-submit-button">Submit</button>
+        <button type="submit" className="guest-submit-button" disabled={isSubmitting}>
+          {isSubmitting ? 'Submitting...' : 'Submit'}
+        </button>
       </form>
-      {success && (
+      {isModalOpen && (
         <div className="modal">
           <div className="modal-content">
-            <span className="close" onClick={() => setSuccess(false)}>&times;</span>
+            <span className="close" onClick={closeModal}>&times;</span>
             <p>Grievance submitted successfully!</p>
           </div>
         </div>

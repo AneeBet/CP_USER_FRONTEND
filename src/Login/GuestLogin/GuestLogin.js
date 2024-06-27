@@ -64,7 +64,7 @@ const GuestLogin = () => {
       />
       <button onClick={handleGuestLogin} className="btn">Login as Guest</button>
       {error && <p className="error-message">{error}</p>}
-      <button onClick={() => navigate('/guest-forgot-password')} className="btn-link">Forgot Password</button>
+      <button onClick={() => {navigate('/guest-forgot-password'); setUserType('guest')}} className="btn-link">Forgot Password</button>
       <div>
         <p>Don't have an account? <Link to="/guest-signup" className="btn-link">Sign up</Link></p>
         <p>Want to login as a customer? <button className="btn-link" onClick={() => {

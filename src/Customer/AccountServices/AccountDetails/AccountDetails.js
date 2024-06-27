@@ -24,7 +24,7 @@ function AccountDetails() {
                 if (response.data.length > 0) {
                     setSelectedAccountNumber(response.data[0].accountNumber.toString());  
                 }
-                setError(''); 
+                setError('');   
             } catch (error) {
                 console.error('Failed to fetch account details:', error);
                 setError('Failed to fetch account details');

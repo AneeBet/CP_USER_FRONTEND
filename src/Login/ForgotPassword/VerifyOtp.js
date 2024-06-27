@@ -21,7 +21,7 @@ const VerifyOtp = () => {
 
     try {
       const response = await axios.post(url, { "email":email, "otp":otp });
-      if (response.status === 200) {
+      if (response.data==true) {
         if (context === 'signup') {
           setUserType('guest');
           setEmail(email);
@@ -32,6 +32,7 @@ const VerifyOtp = () => {
           navigate('/reset-password', { state: { email, otp, userType: context === 'password-reset-guest' ? 'guest' : 'customer' } });
         }
       }
+      setError('Invalid OTP');
     } catch (error) {
       setError('Invalid OTP or OTP expired');
     }

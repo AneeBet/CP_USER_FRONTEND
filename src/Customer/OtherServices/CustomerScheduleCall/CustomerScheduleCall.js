@@ -1,5 +1,3 @@
-
-
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useUser } from '../../../Login/Context/UserContext'; 
@@ -12,7 +10,8 @@ const CustomerScheduleCall = () => {
   const [subject, setSubject] = useState('');
   const [description, setDescription] = useState('');
   const [error, setError] = useState(null); 
-  const [success, setSuccess] = useState(null); 
+  const [isSubmitting, setIsSubmitting] = useState(false); // State to manage button disable
+  const [isModalOpen, setIsModalOpen] = useState(false); // State to manage modal
   const { customerId } = useUser(); 
 
   useEffect(() => {
@@ -37,9 +36,10 @@ const CustomerScheduleCall = () => {
 
     if (!selectedAccount || !timeSlot || !subject || !description) {
       setError('All fields are required');
-      setSuccess(null); 
       return;
     }
+
+    setIsSubmitting(true);
 
     const scheduleCallData = {
       customerCardAccount: {
@@ -55,7 +55,7 @@ const CustomerScheduleCall = () => {
       const response = await axios.post('http://localhost:3552/customer/schedulecall/add', scheduleCallData);
       console.log('Schedule call request submitted successfully:', response.data);
       setError(null); 
-      setSuccess('Schedule call request submitted successfully!'); 
+      setIsModalOpen(true); // Open modal
       
       setSelectedAccount('');
       setTimeSlot('');
@@ -64,14 +64,18 @@ const CustomerScheduleCall = () => {
     } catch (error) {
       console.error('Error submitting schedule call request:', error);
       setError('Error submitting schedule call request');
-      setSuccess(null);
+    } finally {
+      setIsSubmitting(false);
     }
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
   };
 
   return (
     <div className="schedule-call-container">
       {error && <div className="schedule-call-error-message">{error}</div>} 
-      {success && <div className="schedule-call-success-message">{success}</div>} 
       <form className="schedule-call-form" onSubmit={handleSubmit}>
         <div className="schedule-call-form-group">
           <label htmlFor="accountNumber">
@@ -129,8 +133,19 @@ const CustomerScheduleCall = () => {
             required
           ></textarea>
         </div>
-        <button type="submit" className="schedule-call-submit-button">Submit</button>
+        <button type="submit" className="schedule-call-submit-button" disabled={isSubmitting}>
+          {isSubmitting ? 'Submitting...' : 'Submit'}
+        </button>
       </form>
+
+      {isModalOpen && (
+        <div className="modal">
+          <div className="modal-content">
+            <span className="close-button" onClick={closeModal}>&times;</span>
+            <p>Schedule call request submitted successfully!</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

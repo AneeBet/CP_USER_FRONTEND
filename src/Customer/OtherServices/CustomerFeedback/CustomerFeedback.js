@@ -1,6 +1,3 @@
-
-
-
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useUser } from '../../../Login/Context/UserContext';
@@ -10,7 +7,8 @@ const CustomerFeedback = () => {
   const [rating, setRating] = useState('5');
   const [description, setDescription] = useState('');
   const [error, setError] = useState('');
-  const [successMessage, setSuccessMessage] = useState(''); 
+  const [isSubmitting, setIsSubmitting] = useState(false); // State to manage button disable
+  const [isModalOpen, setIsModalOpen] = useState(false); // State to manage modal
   const { customerId } = useUser(); 
 
   const handleSubmit = async (e) => {
@@ -20,6 +18,8 @@ const CustomerFeedback = () => {
       setError('All fields are required');
       return;
     }
+
+    setIsSubmitting(true);
 
     const feedbackData = {
       customerId: customerId, 
@@ -31,15 +31,20 @@ const CustomerFeedback = () => {
       const response = await axios.post('http://localhost:3552/customer/feedback/add', feedbackData);
       console.log('Feedback submitted successfully:', response.data);
       setError(''); 
-      setSuccessMessage('Feedback submitted successfully!'); 
+      setIsModalOpen(true); // Open modal
       
       setRating('5');
       setDescription('');
     } catch (error) {
       console.error('Error submitting feedback:', error);
-      setSuccessMessage(''); 
       setError('Error submitting feedback. Please try again.');
+    } finally {
+      setIsSubmitting(false);
     }
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
   };
 
   return (
@@ -74,12 +79,21 @@ const CustomerFeedback = () => {
           ></textarea>
         </div>
         {error && <div style={{ color: 'red', marginBottom: '10px' }}>{error}</div>}
-        {successMessage && <div style={{ color: 'green', marginBottom: '10px' }}>{successMessage}</div>}
-        <button type="submit" className="feedback-submit-button">Submit</button>
+        <button type="submit" className="feedback-submit-button" disabled={isSubmitting}>
+          {isSubmitting ? 'Submitting...' : 'Submit'}
+        </button>
       </form>
+
+      {isModalOpen && (
+        <div className="modal">
+          <div className="modal-content">
+            <span className="close-button" onClick={closeModal}>&times;</span>
+            <p>Feedback submitted successfully!</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
 
 export default CustomerFeedback;
-

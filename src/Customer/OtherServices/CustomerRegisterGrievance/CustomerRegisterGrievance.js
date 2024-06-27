@@ -1,5 +1,3 @@
-
-
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useUser } from '../../../Login/Context/UserContext';
@@ -11,7 +9,8 @@ const CustomerRegisterGrievance = () => {
   const [accountNumbers, setAccountNumbers] = useState([]);
   const [selectedAccount, setSelectedAccount] = useState('');
   const [error, setError] = useState(''); 
-  const [success, setSuccess] = useState(''); 
+  const [isSubmitting, setIsSubmitting] = useState(false); // State to manage button disable
+  const [isModalOpen, setIsModalOpen] = useState(false); // State to manage modal
   const { customerId } = useUser(); 
 
   useEffect(() => {
@@ -41,6 +40,8 @@ const CustomerRegisterGrievance = () => {
       return;
     }
 
+    setIsSubmitting(true);
+
     const grievanceData = {
       customerCardAccount: {
         accountNumber: selectedAccount,
@@ -55,7 +56,7 @@ const CustomerRegisterGrievance = () => {
       const response = await axios.post('http://localhost:3552/customer/grievance/add', grievanceData);
       console.log('Grievance submitted successfully:', response.data);
       setError('');
-      setSuccess('Grievance submitted successfully!'); 
+      setIsModalOpen(true); // Open modal
      
       setSubject('');
       setDescription('');
@@ -63,8 +64,13 @@ const CustomerRegisterGrievance = () => {
     } catch (error) {
       console.error('Error submitting grievance:', error);
       setError('Error submitting grievance');
-      setSuccess(''); 
+    } finally {
+      setIsSubmitting(false);
     }
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
   };
 
   return (
@@ -110,10 +116,20 @@ const CustomerRegisterGrievance = () => {
             required
           ></textarea>
         </div>
-        <button type="submit" className="grievance-submit-button">Submit</button>
+        <button type="submit" className="grievance-submit-button" disabled={isSubmitting}>
+          {isSubmitting ? 'Submitting...' : 'Submit'}
+        </button>
         {error && <p className="grievance-error-message">{error}</p>} 
-        {success && <p className="grievance-success-message">{success}</p>} 
       </form>
+
+      {isModalOpen && (
+        <div className="modal">
+          <div className="modal-content">
+            <span className="close-button" onClick={closeModal}>&times;</span>
+            <p>Grievance submitted successfully!</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

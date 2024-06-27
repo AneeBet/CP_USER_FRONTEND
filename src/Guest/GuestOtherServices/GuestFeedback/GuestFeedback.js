@@ -7,7 +7,8 @@ const GuestFeedback = () => {
   const [rating, setRating] = useState('5');
   const [description, setDescription] = useState('');
   const [error, setError] = useState('');
-  const [success, setSuccess] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false); // State to manage button disable
+  const [isModalOpen, setIsModalOpen] = useState(false); // State to manage modal
 
   const { email } = useUser(); 
 
@@ -18,6 +19,8 @@ const GuestFeedback = () => {
       setError('All fields are required');
       return;
     }
+
+    setIsSubmitting(true);
 
     const feedbackData = {
       rating: Number(rating), 
@@ -31,15 +34,20 @@ const GuestFeedback = () => {
     try {
       const response = await axios.post('http://localhost:3551/guest/feedback/add', feedbackData);
       console.log('Feedback submitted successfully:', response.data);
-      setSuccess(true);
       setError('');
+      setIsModalOpen(true); // Open modal
       setRating('5');
       setDescription('');
-  
     } catch (error) {
       console.error('Error submitting feedback:', error);
       setError('Error submitting feedback. Please try again.');
+    } finally {
+      setIsSubmitting(false);
     }
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
   };
 
   return (
@@ -74,12 +82,14 @@ const GuestFeedback = () => {
           ></textarea>
         </div>
         {error && <div className="guest-feedback-error">{error}</div>}
-        <button type="submit" className="guest-submit-button">Submit</button>
+        <button type="submit" className="guest-submit-button" disabled={isSubmitting}>
+          {isSubmitting ? 'Submitting...' : 'Submit'}
+        </button>
       </form>
-      {success && (
+      {isModalOpen && (
         <div className="modal">
           <div className="modal-content">
-            <span className="close" onClick={() => setSuccess(false)}>&times;</span>
+            <span className="close" onClick={closeModal}>&times;</span>
             <p>Feedback submitted successfully!</p>
           </div>
         </div>
